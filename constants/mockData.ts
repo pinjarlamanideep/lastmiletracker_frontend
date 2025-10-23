@@ -1,0 +1,77 @@
+export interface Order {
+  id: string;
+  code: string;
+  customerName: string;
+  customerPhone: string;
+  deliveryAddress: string;
+  pickupAddress: string;
+  status: 'pending' | 'picked_up' | 'on_the_way' | 'delivered';
+  eta: string;
+  deliveryBoyName?: string;
+  deliveryBoyPhone?: string;
+  items: string;
+  weight: string;
+  instructions?: string;
+  statusHistory: StatusUpdate[];
+}
+
+export interface StatusUpdate {
+  status: string;
+  timestamp: string;
+  icon: 'clock' | 'package' | 'truck' | 'check-circle';
+}
+
+export const mockOrders: Order[] = [
+  {
+    id: '1',
+    code: '1234',
+    customerName: 'Precious Felix',
+    customerPhone: '+234 801 234 5678',
+    deliveryAddress: 'Lag, NG',
+    pickupAddress: 'Abj, NG',
+    status: 'on_the_way',
+    eta: '15 mins',
+    deliveryBoyName: 'John Doe',
+    deliveryBoyPhone: '+234 802 345 6789',
+    items: 'Amazon Items',
+    weight: '3kg',
+    instructions: 'Please call when you are here',
+    statusHistory: [
+      { status: 'Order Placed', timestamp: '21 May 2024, 9:00 AM', icon: 'clock' },
+      { status: 'Order Confirmed', timestamp: '21 May 2024, 9:15 AM', icon: 'check-circle' },
+      { status: 'Order Picked up', timestamp: '21 May 2024, 10:15 AM', icon: 'package' },
+      { status: 'On the Way', timestamp: '21 May 2024, 10:30 AM', icon: 'truck' },
+    ],
+  },
+  {
+    id: '2',
+    code: '5678',
+    customerName: 'Sarah Johnson',
+    customerPhone: '+234 803 456 7890',
+    deliveryAddress: 'Victoria Island, Lagos',
+    pickupAddress: 'Ikeja, Lagos',
+    status: 'picked_up',
+    eta: '25 mins',
+    items: 'Electronics Package',
+    weight: '5kg',
+    statusHistory: [
+      { status: 'Order Placed', timestamp: '21 May 2024, 11:00 AM', icon: 'clock' },
+      { status: 'Order Picked up', timestamp: '21 May 2024, 11:30 AM', icon: 'package' },
+    ],
+  },
+  {
+    id: '3',
+    code: '9012',
+    customerName: 'Michael Chen',
+    customerPhone: '+234 804 567 8901',
+    deliveryAddress: 'Lekki Phase 1, Lagos',
+    pickupAddress: 'Yaba, Lagos',
+    status: 'pending',
+    eta: '45 mins',
+    items: 'Books and Documents',
+    weight: '2kg',
+    statusHistory: [
+      { status: 'Order Placed', timestamp: '21 May 2024, 12:00 PM', icon: 'clock' },
+    ],
+  },
+];

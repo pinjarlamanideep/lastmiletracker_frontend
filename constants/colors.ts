@@ -1,0 +1,18 @@
+export default {
+  primary: '#1E88E5',
+  primaryDark: '#0277BD',
+  primaryLight: '#64B5F6',
+  secondary: '#F5F9FF',
+  background: '#FFFFFF',
+  backgroundGray: '#F5F9FF',
+  text: '#1A1A1A',
+  textSecondary: '#666666',
+  textLight: '#999999',
+  border: '#E0E0E0',
+  success: '#4CAF50',
+  warning: '#FF9800',
+  error: '#F44336',
+  white: '#FFFFFF',
+  shadow: 'rgba(30, 136, 229, 0.15)',
+  overlay: 'rgba(0, 0, 0, 0.5)',
+};
